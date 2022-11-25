@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 const App = () => {
   const client = window.location.pathname;
   const [ClientTest, setClientTest] = useState(Array<any>);
+  const [ClientExists, setClientExists] = useState("searching");
   function GetData(){
     fetch("/db.json")
     .then(function(res) {
@@ -11,6 +12,9 @@ const App = () => {
     })
     .then(function(data){
       setClientTest(data.filter((e:any) => e.cliente === client.slice(1)));
+      if(data.filter((e:any) => e.cliente === client.slice(1)).length === 0){
+        setClientExists("dontExists");
+      }
       console.log(data.filter((e:any) => e.cliente === client.slice(1)));
     })
   }
@@ -28,7 +32,11 @@ const App = () => {
     <header className="App">
       {
         ClientTest.length === 0?(
-          <h1>Buscando cliente...</h1>
+          <>
+          {
+            ClientExists === "searching"?(<h1>Buscando cliente...</h1>):(<h1>El cliente {client.slice(1)} no existe, prueba buscando con otro nombre</h1>)         
+          }
+          </>       
         ):(
           <>
              {
@@ -44,7 +52,7 @@ const App = () => {
                 </section>
                 <section className='Tareas'>
                    <h1>Tareas</h1>
-                   <p>Escenario:{ClientTest[0].escenario}</p>
+                   <p>Escenario: {ClientTest[0].escenario}</p>
                    {
                     ClientTest[0].preguntas.map((e:any, index: any) =>(<section key={index}>
                         <h1>Tarea {index}</h1>

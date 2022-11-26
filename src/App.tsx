@@ -1,5 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
+import Header from './Components/Header/Header';
 
 const App = () => {
   const client = window.location.pathname;
@@ -23,11 +24,6 @@ const App = () => {
     GetData();
   }, []);
 
-  function createMarkup(transcripcion: string) {
-    return {__html: transcripcion};
-  }
-
-
   return (
     <header className="App">
       {
@@ -41,15 +37,7 @@ const App = () => {
           <>
              {
               ClientTest[0]?(<article className='TestingArea'>
-                <section className='ClientArea'>
-                <h2>{ClientTest[0].cliente}</h2>
-                <h2>Test: Test de usabilidad en el sitio web</h2>
-                <video src={ClientTest[0].linkVideo}></video>
-                </section>
-                <section className='Transcription'>
-                  <h1>Transcripción</h1>
-                  <div dangerouslySetInnerHTML={createMarkup(ClientTest[0].transcripcion)}></div>
-                </section>
+                <Header name={ClientTest[0].cliente} transcription={ClientTest[0].transcripcion} video={ClientTest[0].linkVideo}/>
                 <section className='Tareas'>
                    <h1>Tareas</h1>
                    <p>Escenario: {ClientTest[0].escenario}</p>

@@ -1,0 +1,28 @@
+.ClientArea video{
+    width: 100%;
+}
+.ClientArea{
+    margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ClientArea h2{
+    font-size: 36px;
+    margin-top: -10px;
+    color: white;
+    font-weight: 700;
+    align-self: flex-start;
+}
+.Transcription{
+    font-size: 20px;
+    padding: 0px 10px;
+    background-color: aliceblue;
+    margin-top: 10px;
+    width: 700px;
+}
+.Transcription div{
+    font-size: 15px;
+    height: 340px;
+    overflow-y: scroll;
+}

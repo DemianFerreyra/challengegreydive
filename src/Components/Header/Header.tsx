@@ -1,5 +1,5 @@
 import {FC} from 'react';
-import s from "Header.module.css"
+import s from "./Header.module.css"
 
 
 interface Props {
@@ -14,11 +14,13 @@ const Header:FC<Props> = ({name, transcription, video}) => {
   }
 
   return (
-    <section className='ClientArea'>
+    <section className={s.ClientArea}>
                 <h2>{name}</h2>
                 <h2>Test: Test de usabilidad en el sitio web</h2>
-                <video src={video}></video>
-                <section className='Transcription'>
+                <video controls autoPlay muted>
+                    <source src={video} type="video/mp4"/>
+                </video>
+                <section className={s.Transcription}>
                   <h1>Transcripción</h1>
                   <div dangerouslySetInnerHTML={createMarkup(transcription)}></div>
                 </section>

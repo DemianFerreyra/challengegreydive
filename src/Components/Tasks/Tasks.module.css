@@ -1,0 +1,32 @@
+.Tasks{
+    width: 100%;
+    color: white;
+}
+.Tasks h1{
+    font-size: 30px;
+}
+.Tasks p{
+    font-weight: 600;
+}
+
+
+.TaskZone{
+    width: 600px;
+    height: 400px;
+    overflow-y: scroll;
+    margin-bottom: 60px;
+}
+
+
+.Task{
+    width: 400px;
+    border-top: 1px solid white;
+    margin-top: 50px;
+}
+.Task h1{
+    font-size: 20px;
+}
+.Task p{
+    font-size: 15px;
+    color: rgb(218, 77, 77);
+}

@@ -14,3 +14,12 @@ Body{
   margin-top: 20%;
   color: white;
 }
+
+/*-------Responsive-------*/
+
+@media screen and (max-width: 767px) {
+  .TestingArea{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}

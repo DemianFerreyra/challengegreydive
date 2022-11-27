@@ -30,3 +30,31 @@
     font-size: 15px;
     color: rgb(218, 77, 77);
 }
+
+
+/*-------Responsive-------*/
+
+@media screen and (max-width: 767px) {
+    .Tasks h1{
+        font-size: 24px;
+    }
+
+    .TaskZone{
+        width: 250px;
+        height: 150px;
+        margin-bottom: 40px;
+    }
+
+    .Task{
+        width: 200px;
+        margin-top: 0px;
+    }
+    .Task h1{
+        margin: 10px 0px;
+        font-size: 16px;
+    }
+    .Task p{
+        font-size: 13px;
+        color: rgb(218, 77, 77);
+    }
+}

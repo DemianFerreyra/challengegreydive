@@ -2,7 +2,7 @@
     width: 100%;
 }
 .ClientArea{
-    margin-top: 70px;
+  margin-top: 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,4 +25,26 @@
     font-size: 15px;
     height: 340px;
     overflow-y: scroll;
+}
+
+/*-------Responsive-------*/
+
+@media screen and (max-width: 767px) {
+    .ClientArea{
+        margin-top: 40px;
+    }
+    .ClientArea h2{
+        font-size: 26px;
+        margin-top: -10px;
+    }
+    .Transcription{
+        font-size: 20px;
+        margin-top: 10px;
+        width: 250px;
+    }
+    .Transcription div{
+        font-size: 15px;
+        height: 160px;
+        overflow-y: scroll;
+    }
 }
